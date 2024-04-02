@@ -4,7 +4,7 @@ using UnityEngine;
 using Ebac.Core.Singleton;
 using Ebac.StateMachine;
 
-public class GameManager : Singleton<GameManager>
+public class GameManager : Singleton<PlayerManager>
 {
    public enum GameStates
     {

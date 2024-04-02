@@ -1,8 +1,7 @@
 using System.Linq;
 using UnityEditor;
 
-[CustomEditor(typeof(PlayerManager))]
-public class GameManagerEditor : Editor
+public class PlayerManagerEditor : Editor
 {
     public bool showFoldout;
 
@@ -10,24 +9,24 @@ public class GameManagerEditor : Editor
     {
         base.OnInspectorGUI();
 
-        PlayerManager gm = (PlayerManager)target;
+        PlayerManager pm = (PlayerManager)target;
 
         EditorGUILayout.Space(30);
         EditorGUILayout.LabelField("State Machine");
 
-        if (gm.stateMachine == null) return;
+        if (pm.stateMachine == null) return;
 
-        if (gm.stateMachine.CurrentState != null)
-            EditorGUILayout.LabelField("current State: ", gm.stateMachine.CurrentState.ToString());
+        if (pm.stateMachine.CurrentState != null)
+            EditorGUILayout.LabelField("current State: ", pm.stateMachine.CurrentState.ToString());
 
         showFoldout = EditorGUILayout.Foldout(showFoldout, "Available States");
 
         if (showFoldout)
         {
-            if (gm.stateMachine.dictionaryState != null)
+            if (pm.stateMachine.dictionaryState != null)
             {
-                var keys = gm.stateMachine.dictionaryState.Keys.ToArray();
-                var vals = gm.stateMachine.dictionaryState.Values.ToArray();
+                var keys = pm.stateMachine.dictionaryState.Keys.ToArray();
+                var vals = pm.stateMachine.dictionaryState.Values.ToArray();
 
                 for (int i = 0; i < keys.Length; i++)
                 {
