@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     public float jumpSpeed = 15f;
     public KeyCode jumpKeyCode = KeyCode.Space;
 
+    [Header("Run Setup")] 
+    public KeyCode keyRun = KeyCode.LeftShift; 
+    public float speedRun = 1.5f;
+
 
     void Update() 
     { 
@@ -27,14 +31,30 @@ public class Player : MonoBehaviour
             vSpeed = 0; 
             if (Input.GetKeyDown(jumpKeyCode)) 
             { 
-                vSpeed = jumpSpeed; 
-            } 
+                vSpeed = jumpSpeed;
+                animator.SetBool("Jump", true);
+            } else
+            {
+                animator.SetBool("Jump", false);
+            }
         }
 
         vSpeed -= gravity * Time.deltaTime; 
-        speedVector.y = vSpeed; 
-        //
+        speedVector.y = vSpeed;
+
+
+        var isWalking = inputAxisVertical != 0; 
+        if (isWalking) { 
+            if (Input.GetKey(keyRun)) { 
+                speedVector *= speedRun; 
+                animator.speed = speedRun; 
+            } else { 
+                animator.speed = 1; 
+            } 
+        }
+
         characterController.Move(speedVector * Time.deltaTime);
+
 
         animator.SetBool("Run", inputAxisVertical != 0);
     }
