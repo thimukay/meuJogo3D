@@ -35,6 +35,24 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PrimaryGun"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c336647-b5fc-4b12-a8c2-caad7c30e7f4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SecondaryGun"",
+                    ""type"": ""Button"",
+                    ""id"": ""e8fc2b06-8c83-43c2-9196-82a1da928d69"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +66,28 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33de5dc4-3416-4755-bffb-8326743ae886"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f19448d-6587-43ab-b06c-10e11dfa3c4e"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SecondaryGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +97,8 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Shoot = m_Gameplay.FindAction("Shoot", throwIfNotFound: true);
+        m_Gameplay_PrimaryGun = m_Gameplay.FindAction("PrimaryGun", throwIfNotFound: true);
+        m_Gameplay_SecondaryGun = m_Gameplay.FindAction("SecondaryGun", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -119,11 +161,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Shoot;
+    private readonly InputAction m_Gameplay_PrimaryGun;
+    private readonly InputAction m_Gameplay_SecondaryGun;
     public struct GameplayActions
     {
         private @Inputs m_Wrapper;
         public GameplayActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Shoot => m_Wrapper.m_Gameplay_Shoot;
+        public InputAction @PrimaryGun => m_Wrapper.m_Gameplay_PrimaryGun;
+        public InputAction @SecondaryGun => m_Wrapper.m_Gameplay_SecondaryGun;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -136,6 +182,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Shoot.started += instance.OnShoot;
             @Shoot.performed += instance.OnShoot;
             @Shoot.canceled += instance.OnShoot;
+            @PrimaryGun.started += instance.OnPrimaryGun;
+            @PrimaryGun.performed += instance.OnPrimaryGun;
+            @PrimaryGun.canceled += instance.OnPrimaryGun;
+            @SecondaryGun.started += instance.OnSecondaryGun;
+            @SecondaryGun.performed += instance.OnSecondaryGun;
+            @SecondaryGun.canceled += instance.OnSecondaryGun;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -143,6 +195,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Shoot.started -= instance.OnShoot;
             @Shoot.performed -= instance.OnShoot;
             @Shoot.canceled -= instance.OnShoot;
+            @PrimaryGun.started -= instance.OnPrimaryGun;
+            @PrimaryGun.performed -= instance.OnPrimaryGun;
+            @PrimaryGun.canceled -= instance.OnPrimaryGun;
+            @SecondaryGun.started -= instance.OnSecondaryGun;
+            @SecondaryGun.performed -= instance.OnSecondaryGun;
+            @SecondaryGun.canceled -= instance.OnSecondaryGun;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -163,5 +221,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnShoot(InputAction.CallbackContext context);
+        void OnPrimaryGun(InputAction.CallbackContext context);
+        void OnSecondaryGun(InputAction.CallbackContext context);
     }
 }

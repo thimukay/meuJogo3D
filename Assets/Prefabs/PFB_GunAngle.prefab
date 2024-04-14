@@ -95,7 +95,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8ad3fe51d402fea41ba898850c8d09fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,11 +150,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e4817ce6057194386ff9822727377d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uIGunUpdaters: []
+  maxShoot: 5
+  timeToRecharge: 1
   prefabProjectile: {fileID: -269413618042855620, guid: 435afdbb1e4a1294fa5838ee90ab2352, type: 3}
   positionToShoot: {fileID: 646254916200644698}
   timeBetweenShoot: 0.3
   speed: 50
-  maxShoot: 5
-  timeToRecharge: 1
   amountPerShoot: 4
   angle: 15

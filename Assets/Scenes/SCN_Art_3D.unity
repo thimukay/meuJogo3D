@@ -9990,7 +9990,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f85fc1febf9b9b45be973e30847df5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunBase: {fileID: 6275725016986515333, guid: d88c67108faf8874e9f4de25d7499965, type: 3}
+  primaryGun: {fileID: 6275725016986515333, guid: d88c67108faf8874e9f4de25d7499965, type: 3}
+  secondaryGun: {fileID: 577641858964392964, guid: c3992252631d7ac488257d1bfd21a041, type: 3}
   gunPosition: {fileID: 1802930176}
 --- !u!1 &1802930175
 GameObject:
@@ -10017,7 +10018,7 @@ Transform:
   m_GameObject: {fileID: 1802930175}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0.75, z: -0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
