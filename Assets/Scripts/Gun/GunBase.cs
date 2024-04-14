@@ -14,7 +14,7 @@ public class GunBase : MonoBehaviour
 
     
 
-    IEnumerator ShootCoroutine()
+    protected virtual IEnumerator ShootCoroutine()
     {
         while(true)
         {
