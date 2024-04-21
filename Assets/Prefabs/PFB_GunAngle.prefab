@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 5925960059888064569}
   - component: {fileID: 6513893860164864558}
   - component: {fileID: 2077668626591078696}
-  - component: {fileID: 6125045706450501866}
   - component: {fileID: 577641858964392964}
+  - component: {fileID: 6125045706450501866}
   m_Layer: 0
   m_Name: PFB_GunAngle
   m_TagString: Untagged
@@ -117,6 +117,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &577641858964392964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633975186382886729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e4817ce6057194386ff9822727377d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uIGunUpdaters: []
+  maxShoot: 2
+  timeToRecharge: 2
+  prefabProjectile: {fileID: -269413618042855620, guid: 97589eb588aef9746a3820488bcb055b, type: 3}
+  positionToShoot: {fileID: 646254916200644698}
+  timeBetweenShoot: 0.3
+  speed: 80
+  amountPerShoot: 6
+  angle: 4
 --- !u!65 &6125045706450501866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138,24 +159,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &577641858964392964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6633975186382886729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61e4817ce6057194386ff9822727377d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uIGunUpdaters: []
-  maxShoot: 5
-  timeToRecharge: 1
-  prefabProjectile: {fileID: -269413618042855620, guid: 435afdbb1e4a1294fa5838ee90ab2352, type: 3}
-  positionToShoot: {fileID: 646254916200644698}
-  timeBetweenShoot: 0.3
-  speed: 50
-  amountPerShoot: 4
-  angle: 15
