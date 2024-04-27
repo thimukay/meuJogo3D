@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBase : MonoBehaviour
+public class HealthBase : MonoBehaviour, IDamageable
 {
     public float startLife = 10f;
     public bool destroyOnKill = false;
     [SerializeField] private float _currentLife;
+    public FlashColor flashColor;
+    public ParticleSystem particleSystem;
 
     public Action<HealthBase> OnDamage;
     public Action<HealthBase> OnKill;
@@ -43,13 +45,20 @@ public class HealthBase : MonoBehaviour
 
     public void Damage(float f)
     {
+        if (flashColor != null) flashColor.Flash();
+        if (particleSystem != null) particleSystem.Emit(15);
         _currentLife -= f;
         if (_currentLife <= 0)
         {
             Kill();
+            if (particleSystem != null) particleSystem.Emit(40);
         }
 
         OnDamage?.Invoke(this);
     }
 
+    public void Damage(float damage, Vector3 dir)
+    {
+        Damage(damage);
+    }
 }

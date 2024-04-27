@@ -34,7 +34,7 @@ namespace Boss
             boss.GoToRandomPoint(OnArrive);
         }
 
-        private void OnArrive()
+        public void OnArrive()
         {
             boss.SwitchState(BossAction.ATTACK);
         }

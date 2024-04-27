@@ -19,13 +19,17 @@ namespace Boss
     public class BossBase : MonoBehaviour
     {
         [Header("Animation")]
-        public float startAnimationDuration = .5f;
+        public float startAnimationDuration = 2f;
         public Ease startAnimationEase = Ease.OutBack;
 
 
         [Header("Attack")]
         public int attackAmount = 5;
         public float timeBetweenAttacks = .5f;
+        public bool lookAtPlayer = true;
+        public GunBase gunBase;
+
+        private Player _player;
 
         public float speed = 5f;
         public List<Transform> wayPoints;
@@ -35,11 +39,28 @@ namespace Boss
 
         private StateMachine<BossAction> stateMachine;
 
+        private void Update()
+        {
+            if (lookAtPlayer)
+            {
+                transform.LookAt(_player.transform.position);
+            }
+        }
+
+        private void Start()
+        {
+            _player = GameObject.FindObjectOfType<Player>();
+        }
 
         private void Awake()
         {
             Init();
             healthBase.OnKill += OnBossKill;
+        }
+
+        private void OnEnable()
+        {
+            SwitchState(BossAction.WALK);
         }
         private void Init()
         {
@@ -70,6 +91,7 @@ namespace Boss
             {
                 attacks++;
                 transform.DOScale(1.1f, .1f).SetLoops(2, LoopType.Yoyo);
+                gunBase.Shoot();
                 yield return new WaitForSeconds(timeBetweenAttacks);
             }
 
