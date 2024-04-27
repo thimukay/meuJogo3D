@@ -13,10 +13,12 @@ namespace Enemy
 
         private int _index = 0;
         
+
         
         // debug
-        private void Update()
+        public override void Update()
         {
+            base.Update();
             if (Vector3.Distance(transform.position, wayPoints[_index].transform.position) < minDistance)
             {
                 _index++;

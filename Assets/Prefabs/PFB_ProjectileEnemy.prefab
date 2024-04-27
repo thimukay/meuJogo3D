@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a6e298e483a13144eafebc252d8007d0, type: 2}
+  - {fileID: 2100000, guid: 19412f7cde82e8b4c8ead48996d279b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: -269413618042855620}
   - component: {fileID: -3521454389508741777}
   m_Layer: 0
-  m_Name: PFB_ProjectileAngle
+  m_Name: PFB_ProjectileEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,11 +151,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade49d5cf9b22604a9cf799da07359da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToDestroy: 0.3
-  damageAmount: 2
+  TimeToDestroy: 1
+  damageAmount: 5
   speed: 50
   tagsToHit:
-  - Enemy
+  - Player
 --- !u!54 &-3521454389508741777
 Rigidbody:
   m_ObjectHideFlags: 0
