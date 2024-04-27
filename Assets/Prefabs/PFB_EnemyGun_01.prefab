@@ -153,7 +153,7 @@ MonoBehaviour:
   uIGunUpdaters: []
   maxShoot: 5
   timeToRecharge: 1
-  prefabProjectile: {fileID: -269413618042855620, guid: 435afdbb1e4a1294fa5838ee90ab2352, type: 3}
+  prefabProjectile: {fileID: -269413618042855620, guid: 4fd7a9d7280ad9646aa2db3e9710af4c, type: 3}
   positionToShoot: {fileID: 1027451011296431095}
-  timeBetweenShoot: 2
-  speed: 50
+  timeBetweenShoot: 3
+  speed: 30
