@@ -4897,9 +4897,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4957768434533281256}
-  - component: {fileID: 107199437608521428}
   - component: {fileID: 2802068425533285434}
   - component: {fileID: 8353642560738625697}
+  - component: {fileID: 8530558612265206747}
   m_Layer: 0
   m_Name: Enemy_02
   m_TagString: Untagged
@@ -4923,27 +4923,6 @@ Transform:
   - {fileID: 2052698573381667156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &107199437608521428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6533909931780612954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d829bffb453d0643b50736d05f5a4f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider: {fileID: 2802068425533285434}
-  flashColor: {fileID: 2913105829690694771}
-  particleSystem: {fileID: 8990256688384075138}
-  startLife: 15
-  _animationBase: {fileID: 8353642560738625697}
-  _currentLife: 0
-  startAnimationDuration: 0.2
-  startAnimationEase: 27
-  startWithBornAnimation: 1
 --- !u!65 &2802068425533285434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4987,6 +4966,30 @@ MonoBehaviour:
     trigger: Attack
   - animationType: 4
     trigger: Death
+--- !u!114 &8530558612265206747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533909931780612954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb36a26db0bbad1438681e860986f473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 2802068425533285434}
+  flashColor: {fileID: 2913105829690694771}
+  particleSystem: {fileID: 8990256688384075138}
+  startLife: 15
+  _animationBase: {fileID: 8353642560738625697}
+  _currentLife: 0
+  startAnimationDuration: 0.2
+  startAnimationEase: 27
+  startWithBornAnimation: 1
+  wayPoints: []
+  minDistance: 1
+  speed: 1
 --- !u!1 &8406421175522864926
 GameObject:
   m_ObjectHideFlags: 0
