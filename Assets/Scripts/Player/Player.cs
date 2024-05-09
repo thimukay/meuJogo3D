@@ -6,6 +6,8 @@ public class Player : MonoBehaviour//, IDamageable
 {
     public List<Collider> colliders;
     public Animator animator;
+
+    public PlayerAbilityShoot pAs;
     
     
     public CharacterController characterController;
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour//, IDamageable
     private void OnValidate()
     {
         if (healthBase == null) healthBase = GetComponent<HealthBase>();
+        if (pAs == null) pAs = GetComponent<PlayerAbilityShoot>();
     }
 
     private void Awake()
@@ -52,6 +55,7 @@ public class Player : MonoBehaviour//, IDamageable
             _alive = false;
             animator.SetTrigger("Death");
             colliders.ForEach(i => i.enabled = false);
+            pAs.enabled = false;
         }
         
     }
