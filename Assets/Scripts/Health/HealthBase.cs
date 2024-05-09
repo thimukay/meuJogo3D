@@ -32,9 +32,10 @@ public class HealthBase : MonoBehaviour, IDamageable
         return _currentLife;
     }
 
-    protected void ResetLife()
+    public void ResetLife()
     {
         _currentLife = startLife;
+        UpdateUI();
     }
 
     protected virtual void Kill()

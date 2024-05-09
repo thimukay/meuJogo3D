@@ -41,8 +41,10 @@ public class CheckPointBase : MonoBehaviour
 
     private void SaveCheckpoint()
     {
-        if(PlayerPrefs.GetInt(checkpointKey, 0) > key)
-            PlayerPrefs.SetInt(checkpointKey, key);
+        /*if(PlayerPrefs.GetInt(checkpointKey, 0) > key)
+            PlayerPrefs.SetInt(checkpointKey, key);*/
+
+        CheckpointManager.Instance.SaveCheckPoint(key);
 
         checkpointActivated = true;
     }
