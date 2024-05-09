@@ -7,7 +7,7 @@ public class HealthBase : MonoBehaviour, IDamageable
 {
     public float startLife = 10f;
     public bool destroyOnKill = false;
-    [SerializeField] private float _currentLife;
+    public float currentLife;
     public FlashColor flashColor;
     public ParticleSystem particleSystem;
 
@@ -26,7 +26,7 @@ public class HealthBase : MonoBehaviour, IDamageable
 
     protected void ResetLife()
     {
-        _currentLife = startLife;
+        currentLife = startLife;
     }
 
     protected virtual void Kill()
@@ -47,8 +47,8 @@ public class HealthBase : MonoBehaviour, IDamageable
     {
         if (flashColor != null) flashColor.Flash();
         if (particleSystem != null) particleSystem.Emit(15);
-        _currentLife -= f;
-        if (_currentLife <= 0)
+        currentLife -= f;
+        if (currentLife <= 0)
         {
             Kill();
             if (particleSystem != null) particleSystem.Emit(40);
