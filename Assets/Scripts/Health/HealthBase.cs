@@ -7,12 +7,15 @@ public class HealthBase : MonoBehaviour, IDamageable
 {
     public float startLife = 10f;
     public bool destroyOnKill = false;
-    public float currentLife;
+    [SerializeField] private float _currentLife;
     public FlashColor flashColor;
     public ParticleSystem particleSystem;
 
     public Action<HealthBase> OnDamage;
     public Action<HealthBase> OnKill;
+
+
+    public List<UIFillUpdater> uiFillUpdater;
 
 
     private void Awake()
@@ -24,9 +27,14 @@ public class HealthBase : MonoBehaviour, IDamageable
         ResetLife();
     }
 
+    public float getCurrentLife()
+    {
+        return _currentLife;
+    }
+
     protected void ResetLife()
     {
-        currentLife = startLife;
+        _currentLife = startLife;
     }
 
     protected virtual void Kill()
@@ -47,18 +55,27 @@ public class HealthBase : MonoBehaviour, IDamageable
     {
         if (flashColor != null) flashColor.Flash();
         if (particleSystem != null) particleSystem.Emit(15);
-        currentLife -= f;
-        if (currentLife <= 0)
+        _currentLife -= f;
+        if (_currentLife <= 0)
         {
             Kill();
             if (particleSystem != null) particleSystem.Emit(40);
         }
-
+        UpdateUI();
         OnDamage?.Invoke(this);
     }
 
     public void Damage(float damage, Vector3 dir)
     {
         Damage(damage);
+    }
+
+    private void UpdateUI()
+    {
+        if (uiFillUpdater != null)
+        {
+            uiFillUpdater.ForEach(i => i.UpdateValue((float)_currentLife/startLife));
+
+        }
     }
 }

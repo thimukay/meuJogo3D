@@ -6,7 +6,7 @@ using UnityEngine;
 public class GunBase : MonoBehaviour
 {
 
-    public List<UIGunUpdater> uIGunUpdaters;
+    public List<UIFillUpdater> uIGunUpdaters;
     public float maxShoot = 5;
     public float timeToRecharge = 1f;
 
@@ -56,6 +56,6 @@ public class GunBase : MonoBehaviour
 
     public void GetAllUIs()
     {
-        uIGunUpdaters = GameObject.FindObjectsOfType<UIGunUpdater>().ToList();
+        uIGunUpdaters = GameObject.FindObjectsOfType<UIFillUpdater>().ToList();
     }
 }

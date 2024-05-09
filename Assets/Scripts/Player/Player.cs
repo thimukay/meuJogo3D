@@ -25,6 +25,7 @@ public class Player : MonoBehaviour//, IDamageable
     [Header("Flash")]
     public List<FlashColor> flashColors;
 
+    [Header("Life")]
     public HealthBase healthBase;
 
     private bool _alive = true;
@@ -39,14 +40,14 @@ public class Player : MonoBehaviour//, IDamageable
         OnValidate();
 
         healthBase.OnDamage += Damage;
-        healthBase.OnDamage += OnKill;
+        healthBase.OnKill += OnKill;
     }
 
 
     #region LIFE
     private void OnKill(HealthBase h)
     {
-        if (_alive && healthBase.currentLife >= 0)
+        if (_alive && healthBase.getCurrentLife() <= 0f)
         {
             _alive = false;
             animator.SetTrigger("Death");
