@@ -15,7 +15,7 @@ public class HealthBase : MonoBehaviour, IDamageable
     public Action<HealthBase> OnKill;
 
 
-    public List<UIFillUpdater> uiFillUpdater;
+    public List<UIHealthUpdater> uiFillUpdater;
 
 
     private void Awake()
