@@ -68,6 +68,7 @@ public class Player : MonoBehaviour//, IDamageable
         animator.SetTrigger("Revive");
         Respawn();
         Invoke(nameof(TurnOnColliders), .1f);
+        EffectsManager.Instance.ResetVignette();
     }
 
     private void TurnOnColliders()
@@ -79,6 +80,7 @@ public class Player : MonoBehaviour//, IDamageable
     public void Damage(HealthBase h)
     {
         flashColors.ForEach(i => i.Flash());
+        EffectsManager.Instance.ChangeVignette();
     }
 
     public void Damage(float damage, Vector3 dir)
