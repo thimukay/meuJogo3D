@@ -97,7 +97,8 @@ namespace Boss
             while(attacks < attackAmount)
             {
                 attacks++;
-                transform.DOScale(1.1f, .1f).SetLoops(2, LoopType.Yoyo);
+                //transform.DOScale(1.1f, .1f).SetLoops(2, LoopType.Yoyo);
+                transform.DOScale(transform.localScale*1.1f, .1f).SetLoops(2, LoopType.Yoyo);
                 gunBase.Shoot();
                 yield return new WaitForSeconds(timeBetweenAttacks);
             }
