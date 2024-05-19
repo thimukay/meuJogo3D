@@ -18,8 +18,9 @@ public class ActionLifePack : MonoBehaviour
         if(soInt.value > 0)
         {
             ItemManager.Instance.RemoveByType(ItemType.LIFE_PACK);
+            if(Player.Instance.healthBase.getCurrentLife() != Player.Instance.healthBase.startLife) EffectsManager.Instance.ResetVignette();
             Player.Instance.healthBase.ResetLife();
-            EffectsManager.Instance.ResetVignette();
+            
         }
     }
 
