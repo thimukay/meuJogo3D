@@ -4,55 +4,72 @@ using UnityEngine;
 using Ebac.Core.Singleton;
 using TMPro;
 
-public class ItemManager : Singleton<ItemManager>
+namespace Itens
 {
+    public enum ItemType
+    {
+        COIN,
+        LIFE_PACK
+    }
 
+    public class ItemManager : Singleton<ItemManager>
+    {
+
+        public List<ItemSetup> itemSetup;
    
-    public SOInt coins;
-    public SOInt potions;
-    public TextMeshProUGUI coinNumber;
-    public TextMeshProUGUI potionNumber;
+ 
 
-    private void Start()
-    {
-        Reset();
-    }
-
-
-    private void Reset()
-    {
-        coins.value = 0;
-        potions.value = 0;
-        SetCoinUI();
-    }
-
-    public void AddCoins(int amount = 1)
-    {
-        coins.value += amount;
-        Debug.Log("coins: " + coins.value);
-        SetCoinUI();
-    }
-
-    public void AddPotion(int amount = 1)
-    {
-        potions.value += amount;
-        Debug.Log("hearts: " + potions.value);
-        SetCoinUI();
-    }
-
-    public bool UsePotion()
-    {
-        if (potions.value > 0)
+        private void Start()
         {
-            potions.value--;
-            return true;
+            Reset();
         }
-        else return false;
+
+
+        private void Reset()
+        {
+            foreach(var i in itemSetup)
+            {
+                i.soInt.value = 0;
+            }
+        }
+
+        public void AddByType(ItemType itemType, int amount = 1)
+        {
+            if (amount < 0) return;
+            itemSetup.Find(i => i.itemType == itemType).soInt.value += amount;
+        }
+
+        public void RemoveByType(ItemType itemType, int amount = -1)
+        {
+            if (amount > 0) return;
+            var item = itemSetup.Find(i => i.itemType == itemType);
+            item.soInt.value -= amount;
+
+            if (item.soInt.value < 0) item.soInt.value = 0;
+        }
+
+
+         /*public bool UsePotion()
+         {
+            if (potions.value > 0)
+            {
+                potions.value--;
+                return true;
+            }
+            else return false;
+         }*/
+
+        public void SetCoinUI()
+        {
+            //coinNumber.SetText("x "+coins.ToString());
+            //UIInGameManager.UpdateTextCoins(coins.value.ToString());
+        }
     }
 
-    public void SetCoinUI()
+    [System.Serializable]
+    public class ItemSetup
     {
-        //coinNumber.SetText("x "+coins.ToString());
-        //UIInGameManager.UpdateTextCoins(coins.value.ToString());
+        public ItemType itemType;
+        public SOInt soInt;
     }
 }
