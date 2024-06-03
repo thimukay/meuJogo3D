@@ -251,6 +251,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7703423336758522442, guid: 9543c8747ede5a84589ebcb498fb4515, type: 3}
   m_PrefabInstance: {fileID: 16216641}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &20695366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20695368}
+  - component: {fileID: 20695367}
+  m_Layer: 0
+  m_Name: ChestItemCoin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &20695367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20695366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07b397ddfe0d2a649bf018b7478e181e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinNumber: 5
+  coinObject: {fileID: 919132149155446097, guid: 320013e4a539592499129bf81c319566, type: 3}
+--- !u!4 &20695368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20695366}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9213649, z: -0, w: 0.38869873}
+  m_LocalPosition: {x: 0, y: 0.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1878933912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &27757644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1933,6 +1979,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 192860403247030459, guid: e70fcda253eb77f438367bfee31e1477, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1478794709}
+    - targetCorrespondingSourceObject: {fileID: 192860403247030459, guid: e70fcda253eb77f438367bfee31e1477, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 20695368}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 713535970505882113, guid: e70fcda253eb77f438367bfee31e1477, type: 3}
       insertIndex: -1
@@ -23897,11 +23946,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a3bae8b28e06144be82ac3b8892db5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 101
   animator: {fileID: 1878933911}
   triggerOpen: Open
   notification: {fileID: 1478794708}
   tweenDuration: 0.2
   ease: 27
+  chestItem: {fileID: 20695367}
 --- !u!135 &1878933914
 SphereCollider:
   m_ObjectHideFlags: 0
