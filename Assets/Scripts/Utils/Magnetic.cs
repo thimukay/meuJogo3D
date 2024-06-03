@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Magnetic : MonoBehaviour
 {
-    public float dist = .2f;
+    public float dist = 2f;
     public float coinSpeed = 3f;
 
     // Update is called once per frame
