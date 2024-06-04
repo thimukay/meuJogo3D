@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace Cloth
 {
-    public class ClothItemSpeed : ClothItemBase
+    public class ClothItemStrong : ClothItemBase
     {
-        public float targetSpeed = 35f;
+        public float damageMultiply = .5f;
         public override void Collect()
         {
             base.Collect();
-            Player.Instance.ChangeSpeed(targetSpeed, duration);
+            Player.Instance.healthBase.ChangeDamageMultiply(damageMultiply, duration);
         }
 
     }

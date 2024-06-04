@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Ebac.Core.Singleton;
+using Cloth;
 
 public class Player : Singleton<Player>//, IDamageable
 {
@@ -30,6 +31,9 @@ public class Player : Singleton<Player>//, IDamageable
 
     [Header("Life")]
     public HealthBase healthBase;
+
+    [Space]
+    [SerializeField]private ClothChanger _clothChanger;
 
     private bool _alive = true;
 
@@ -82,7 +86,7 @@ public class Player : Singleton<Player>//, IDamageable
 
     public void Damage(HealthBase h)
     {
-        flashColors.ForEach(i => i.Flash());
+        //flashColors.ForEach(i => i.Flash());
         EffectsManager.Instance.ChangeVignette();
         ShakeCamera.Instance.Shake();
     }
@@ -153,5 +157,16 @@ public class Player : Singleton<Player>//, IDamageable
         yield return new WaitForSeconds(duration);
         speed = defaultSpeed;
     }
-    
+
+    public void ChangeTexture(ClothSetup setup, float duration)
+    {
+        StartCoroutine(ChangeTextureCoroutine(setup, duration));
+    }
+    IEnumerator ChangeTextureCoroutine(ClothSetup setup, float duration)
+    {
+        _clothChanger.ChangeTexture(setup);
+        yield return new WaitForSeconds(duration);
+        _clothChanger.ResetTexture();
+    }
+
 }
