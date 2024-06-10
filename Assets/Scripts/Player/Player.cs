@@ -36,6 +36,7 @@ public class Player : Singleton<Player>//, IDamageable
     [SerializeField]private ClothChanger _clothChanger;
 
     private bool _alive = true;
+    private bool _jumping = false;
 
     private void OnValidate()
     {
@@ -105,15 +106,23 @@ public class Player : Singleton<Player>//, IDamageable
         var speedVector = transform.forward * inputAxisVertical * speed;
 
         if (characterController.isGrounded) 
-        { 
+        {
+
+            if (_jumping)
+            {
+                _jumping = false;
+                animator.SetTrigger("Land");
+            }
             vSpeed = 0; 
             if (Input.GetKeyDown(jumpKeyCode)) 
             { 
                 vSpeed = jumpSpeed;
-                animator.SetBool("Jump", true);
-            } else
-            {
-                animator.SetBool("Jump", false);
+
+                if (!_jumping)
+                {
+                    _jumping = true;
+                    animator.SetTrigger("Jump");
+                }
             }
         }
 
