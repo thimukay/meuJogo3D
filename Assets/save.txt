@@ -3,8 +3,8 @@
     "currentLevel": 2,
     "nextLevel": 3,
     "LevelEnded": false,
-    "coins": 15.0,
-    "potion": 1.0,
+    "coins": 17.0,
+    "potion": 3.0,
     "clothSetup": {
         "clothType": 2,
         "texture": {
@@ -12,9 +12,9 @@
         }
     },
     "checkpoint": {
-        "x": 432.7200012207031,
-        "y": -7.570000171661377,
-        "z": 20.860000610351564
+        "x": 387.79998779296877,
+        "y": -8.199999809265137,
+        "z": 30.899999618530275
     },
     "PlayerName": "Thiago"
 }

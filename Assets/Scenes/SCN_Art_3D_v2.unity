@@ -1129,7 +1129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170292014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583564, w: 0.17029096}
+  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583566, w: 0.17029092}
   m_LocalPosition: {x: 414.09, y: -3.3000002, z: 34.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28425,7 +28425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533602639}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.021246653, y: 0.9631826, z: -0.25578701, w: 0.08000565}
+  m_LocalRotation: {x: 0.021246647, y: 0.96318257, z: -0.25578701, w: 0.08000564}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -28593,10 +28593,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clothSetups:
   - clothType: 0
-    texture: {fileID: 2800000, guid: f7cd95797f310a7469cdd61087a00cbb, type: 3}
+    texture: {fileID: 2800000, guid: 8d0f7b33a4f3bf5459574270675b2718, type: 3}
   - clothType: 1
-    texture: {fileID: 2800000, guid: 998fa950890c5b749be1900abad6251b, type: 3}
+    texture: {fileID: 2800000, guid: 3f2f07b3cab35d14f9754cc2f31b73d9, type: 3}
   - clothType: 2
+    texture: {fileID: 2800000, guid: 998fa950890c5b749be1900abad6251b, type: 3}
+  - clothType: 3
     texture: {fileID: 2800000, guid: c97d46f9aec8cdc4cba7c5a41a756fec, type: 3}
 --- !u!4 &1597885778
 Transform:
