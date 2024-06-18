@@ -10,6 +10,8 @@ public class SaveManager : Singleton<SaveManager>
     [SerializeField]
     private SaveSetup _saveSetup;
 
+    public Material standardSkin;
+
     private string _path = Application.dataPath + "/save.txt";
 
     public int lastLevel;
@@ -45,6 +47,8 @@ public class SaveManager : Singleton<SaveManager>
         _saveSetup.LevelEnded = true;
         _saveSetup.gameStarted = false;
         _saveSetup.nextLevel = 2;
+        _saveSetup.clothSetup.clothType = 0;
+        _saveSetup.clothSetup.texture = (Texture2D)standardSkin.GetTexture("_EmissionMap");
         _saveSetup.coins = 0;
         _saveSetup.potion = 0;
         _saveSetup.PlayerName = "Thiago";
@@ -53,7 +57,7 @@ public class SaveManager : Singleton<SaveManager>
 
     private void Start()
     {
-        Invoke(nameof(Load), .5f);
+        Invoke(nameof(Load), 1f);
     }
 
 
@@ -142,7 +146,7 @@ public class SaveSetup
     public bool LevelEnded = true;
     public float coins;
     public float potion;
-    public Cloth.ClothSetup clothSetup;
+    public Cloth.ClothSetup clothSetup = new Cloth.ClothSetup();
     public Vector3 checkpoint;
 
     public string PlayerName;

@@ -4183,6 +4183,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 502466770625914738, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
+      propertyPath: standardSkin
+      value: 
+      objectReference: {fileID: 2100000, guid: 654bef3b2bab6c74abadff7014af75f6, type: 2}
+    - target: {fileID: 502466770625914738, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: _saveSetup.coins
       value: 0
       objectReference: {fileID: 0}
