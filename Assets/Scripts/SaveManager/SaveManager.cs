@@ -25,6 +25,13 @@ public class SaveManager : Singleton<SaveManager>
         Debug.Log(setupToJson);
         SaveFile(setupToJson);
     }
+
+    public void SaveItems()
+    {
+        _saveSetup.coins = Itens.ItemManager.Instance.GetItemByType(Itens.ItemType.COIN).soInt.value;
+        _saveSetup.health = Itens.ItemManager.Instance.GetItemByType(Itens.ItemType.LIFE_PACK).soInt.value;
+        Save();
+    }
     
     public void SaveName(string text)
     {
@@ -34,6 +41,7 @@ public class SaveManager : Singleton<SaveManager>
     public void SaveLastLevel(int level)
     {
         _saveSetup.lastLevel = level;
+        SaveItems();
         Save();
     }
     #endregion
@@ -60,5 +68,8 @@ public class SaveManager : Singleton<SaveManager>
 public class SaveSetup
 {
     public int lastLevel;
+    public float coins;
+    public float health;
+
     public string PlayerName;
 }
