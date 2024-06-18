@@ -84,7 +84,8 @@ public class HealthBase : MonoBehaviour, IDamageable
 
     public void ChangeDamageMultiply(float damage, float duration)
     {
-        StartCoroutine(ChangeDamageMultiplyCoroutine(damage, duration));
+        this.damageMultiply = damage;
+        //StartCoroutine(ChangeDamageMultiplyCoroutine(damage, duration));
     }
     IEnumerator ChangeDamageMultiplyCoroutine(float damageMultiply, float duration)
     {

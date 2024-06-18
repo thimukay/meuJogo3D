@@ -1022,7 +1022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170292014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583566, w: 0.17029092}
+  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583564, w: 0.17029096}
   m_LocalPosition: {x: 323.3, y: -3.3000002, z: 117.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1160cc337f62e1046800e74c69dbf238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothType: 1
+  clothType: 2
   duration: 5
   compareTag: Player
   damageMultiply: 0.5
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee7663fb84ca254a971c14f4c4a6b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothType: 2
+  clothType: 3
   duration: 20
   compareTag: Player
 --- !u!135 &227141342
@@ -1670,7 +1670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238017331}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24446768, y: 0.000000018653607, z: -0.0000000047029025, w: 0.9696575}
+  m_LocalRotation: {x: 0.24446768, y: -0.000000018653607, z: 0.0000000047029025, w: 0.9696575}
   m_LocalPosition: {x: 323.3, y: 2.6999998, z: 97.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7845,7 +7845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1078873f16841046bfc294d51d666da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothType: 0
+  clothType: 1
   duration: 2
   compareTag: Player
   targetSpeed: 35
@@ -25543,7 +25543,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2037254150}
     m_Modifications:
     - target: {fileID: 2553733185972076784, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_Name
@@ -25551,15 +25551,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 424.41965
+      value: 24.573853
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.61531
+      value: 3.7579646
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.10332
+      value: -6.2724
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25567,15 +25567,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25594,6 +25594,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
+--- !u!4 &1529423260 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8659230584886381277, guid: 50d2eb9fc48d2aa41bfe58f015f3465c, type: 3}
+  m_PrefabInstance: {fileID: 1529423259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1533602639
 GameObject:
   m_ObjectHideFlags: 3
@@ -25619,7 +25624,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533602639}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.033599716, y: 0.9581826, z: -0.25445923, w: -0.1265219}
+  m_LocalRotation: {x: -0.033599705, y: 0.9581826, z: -0.25445923, w: -0.12652189}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25892,10 +25897,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clothSetups:
   - clothType: 0
-    texture: {fileID: 2800000, guid: f7cd95797f310a7469cdd61087a00cbb, type: 3}
+    texture: {fileID: 2800000, guid: 8d0f7b33a4f3bf5459574270675b2718, type: 3}
   - clothType: 1
-    texture: {fileID: 2800000, guid: 998fa950890c5b749be1900abad6251b, type: 3}
+    texture: {fileID: 2800000, guid: 3f2f07b3cab35d14f9754cc2f31b73d9, type: 3}
   - clothType: 2
+    texture: {fileID: 2800000, guid: 998fa950890c5b749be1900abad6251b, type: 3}
+  - clothType: 3
     texture: {fileID: 2800000, guid: c97d46f9aec8cdc4cba7c5a41a756fec, type: 3}
 --- !u!4 &1597885778
 Transform:
@@ -25905,12 +25912,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597885776}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 399.8458, y: -11.373275, z: 47.37572}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2037254150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1604677027
 GameObject:
@@ -30861,7 +30868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663730948}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.02898165, y: 0.9667934, z: -0.21948536, w: -0.12765893}
+  m_LocalRotation: {x: -0.028981637, y: 0.9667934, z: -0.21948536, w: -0.12765889}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31526,6 +31533,9 @@ MonoBehaviour:
   - {fileID: 404972649}
   healthBase: {fileID: 1791989393}
   _clothChanger: {fileID: 1755247082}
+  _clothSetup:
+    clothType: 0
+    texture: {fileID: 0}
 --- !u!4 &1791989390
 Transform:
   m_ObjectHideFlags: 0
@@ -32669,6 +32679,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1471707489}
+  - {fileID: 1597885778}
+  - {fileID: 1529423260}
   m_Father: {fileID: 1188715397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2046570779 stripped
@@ -33781,10 +33793,8 @@ SceneRoots:
   - {fileID: 180519858}
   - {fileID: 1188715397}
   - {fileID: 1169550408}
-  - {fileID: 1597885778}
   - {fileID: 701230509}
   - {fileID: 220750731}
   - {fileID: 227141343}
   - {fileID: 663641396}
   - {fileID: 5641185445943731637}
-  - {fileID: 1529423259}

@@ -19,7 +19,7 @@ public class CheckpointManager : Singleton<CheckpointManager>
 
     private void ShowCheckpointUI(string s)
     {
-        tmp.SetText("Checkpoint " + s + " reached!");
+        tmp.SetText("Checkpoint " + s + " saved!");
         StartCoroutine(FadeOut());
     }
 

@@ -22,9 +22,14 @@ namespace Itens
         private void Start()
         {
             Reset();
+            LoadItemsFromSave();
         }
 
-
+        public void LoadItemsFromSave()
+        {
+            AddByType(ItemType.COIN, (int)SaveManager.Instance.Setup.coins);
+            AddByType(ItemType.LIFE_PACK, (int)SaveManager.Instance.Setup.potion);
+        }
         private void Reset()
         {
             foreach(var i in itemSetup)

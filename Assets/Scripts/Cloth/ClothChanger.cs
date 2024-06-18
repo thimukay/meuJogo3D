@@ -22,9 +22,14 @@ namespace Cloth
         }
 
         [NaughtyAttributes.Button]
-        private void ChangeTexture()
+        public void ChangeTexture()
         {
             mesh.sharedMaterials[0].SetTexture(shaderIdName, texture);
+        }
+
+        public Texture2D getClothTexture()
+        {
+            return texture;
         }
 
         public void ChangeTexture(ClothSetup setup)

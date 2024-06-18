@@ -1129,7 +1129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170292014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583566, w: 0.17029092}
+  m_LocalRotation: {x: 0.011403638, y: 0.983126, z: -0.06583564, w: 0.17029096}
   m_LocalPosition: {x: 414.09, y: -3.3000002, z: 34.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1550,7 +1550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1160cc337f62e1046800e74c69dbf238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothType: 1
+  clothType: 2
   duration: 5
   compareTag: Player
   damageMultiply: 0.5
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee7663fb84ca254a971c14f4c4a6b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothType: 2
+  clothType: 3
   duration: 20
   compareTag: Player
 --- !u!135 &227141342
@@ -8893,7 +8893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1078873f16841046bfc294d51d666da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothType: 0
+  clothType: 1
   duration: 2
   compareTag: Player
   targetSpeed: 35
@@ -28425,7 +28425,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533602639}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.021246647, y: 0.96318257, z: -0.25578701, w: 0.08000564}
+  m_LocalRotation: {x: 0.021246653, y: 0.9631826, z: -0.25578701, w: 0.08000565}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33763,7 +33763,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663730948}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.018326428, y: 0.97183836, z: -0.22063065, w: 0.080724634}
+  m_LocalRotation: {x: 0.018326426, y: 0.97183836, z: -0.22063065, w: 0.08072462}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34399,6 +34399,9 @@ MonoBehaviour:
   - {fileID: 404972649}
   healthBase: {fileID: 1791989393}
   _clothChanger: {fileID: 1755247082}
+  _clothSetup:
+    clothType: 0
+    texture: {fileID: 0}
 --- !u!4 &1791989390
 Transform:
   m_ObjectHideFlags: 0

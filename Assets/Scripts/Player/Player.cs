@@ -13,7 +13,7 @@ public class Player : Singleton<Player>//, IDamageable
     
     
     public CharacterController characterController;
-    public float speed = 1f; 
+    public float speed = 10f; 
     public float turnSpeed = 1f; 
     public float gravity = 9.8f; 
     private float vSpeed = 0f;
@@ -34,6 +34,7 @@ public class Player : Singleton<Player>//, IDamageable
 
     [Space]
     [SerializeField]private ClothChanger _clothChanger;
+    [SerializeField]private ClothSetup _clothSetup;
 
     private bool _alive = true;
     private bool _jumping = false;
@@ -49,11 +50,18 @@ public class Player : Singleton<Player>//, IDamageable
         base.Awake();
         OnValidate();
 
+        _clothSetup = ClothManager.Instance.GetSetupByType(ClothType.COMMON);
+
+        if (!SaveManager.Instance.Setup.LevelEnded)
+        {
+            transform.position = SaveManager.Instance.Setup.checkpoint;
+            ChangeTexture(SaveManager.Instance.Setup.clothSetup, .2f);
+        }
+
+        if (!SaveManager.Instance.Setup.gameStarted) _clothChanger.ChangeTexture();
         healthBase.OnDamage += Damage;
         healthBase.OnKill += OnKill;
     }
-
-
 
     #region LIFE
     private void OnKill(HealthBase h)
@@ -151,13 +159,15 @@ public class Player : Singleton<Player>//, IDamageable
     {
         if (CheckpointManager.Instance.HasCheckpoint())
         {
+            //_clothChanger.ChangeTexture();
             transform.position = CheckpointManager.Instance.GetPositionFromLastCheckpoint();
         }
     }
 
     public void ChangeSpeed(float speed, float duration)
     {
-        StartCoroutine(ChangeSpeedCoroutine(speed, duration));
+        this.speed = speed;
+        //StartCoroutine(ChangeSpeedCoroutine(speed, duration));
     }
     IEnumerator ChangeSpeedCoroutine(float localSpeed, float duration)
     {
@@ -167,9 +177,16 @@ public class Player : Singleton<Player>//, IDamageable
         speed = defaultSpeed;
     }
 
+    public ClothSetup getCloth()
+    {
+        return _clothSetup;
+    }
+
     public void ChangeTexture(ClothSetup setup, float duration)
     {
-        StartCoroutine(ChangeTextureCoroutine(setup, duration));
+        _clothSetup = setup;
+        _clothChanger.ChangeTexture(setup);
+        //StartCoroutine(ChangeTextureCoroutine(setup, duration));
     }
     IEnumerator ChangeTextureCoroutine(ClothSetup setup, float duration)
     {

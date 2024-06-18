@@ -28,6 +28,7 @@ public class CheckPointBase : MonoBehaviour
     {
         TurnItOn();
         SaveCheckpoint();
+        SaveManager.Instance.SaveCurrentLevel();
     }
 
     private void TurnItOn()

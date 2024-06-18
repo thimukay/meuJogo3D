@@ -9,6 +9,7 @@ namespace Cloth
 
     public enum ClothType
     {
+        COMMON,
         SPEED,
         STRONG,
         BASIC
