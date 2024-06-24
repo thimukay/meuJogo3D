@@ -1,0 +1,20 @@
+{
+    "gameStarted": true,
+    "currentLevel": 1,
+    "nextLevel": 2,
+    "LevelEnded": false,
+    "coins": 7.0,
+    "potion": 1.0,
+    "clothSetup": {
+        "clothType": 0,
+        "texture": {
+            "instanceID": 25280
+        }
+    },
+    "checkpoint": {
+        "x": 405.29998779296877,
+        "y": -7.570000171661377,
+        "z": 114.80000305175781
+    },
+    "PlayerName": "Thiago"
+}
