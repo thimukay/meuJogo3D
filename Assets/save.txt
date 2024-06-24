@@ -3,7 +3,7 @@
     "currentLevel": 1,
     "nextLevel": 2,
     "LevelEnded": false,
-    "coins": 7.0,
+    "coins": 10.0,
     "potion": 1.0,
     "clothSetup": {
         "clothType": 0,
