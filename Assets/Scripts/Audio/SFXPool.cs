@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using Ebac.Core.Singleton;
 
 public class SFXPool : Singleton<SFXPool>
 {
     private List<AudioSource> _audioSourceList;
+    public AudioMixerGroup audioMixerGroup;
 
     public int poolSize = 10;
 
@@ -29,7 +31,9 @@ public class SFXPool : Singleton<SFXPool>
     {
         GameObject go = new GameObject("SFX_Pool");
         go.transform.SetParent(gameObject.transform);
-        _audioSourceList.Add(go.AddComponent<AudioSource>());
+        go.AddComponent<AudioSource>();
+        go.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerGroup;
+        _audioSourceList.Add(go.GetComponent<AudioSource>());
     }
 
     public void Play(SFXType sfxType)

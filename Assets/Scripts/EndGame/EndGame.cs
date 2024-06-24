@@ -7,6 +7,7 @@ public class EndGame : MonoBehaviour
 {
 
     public List<GameObject> EndgameObjects;
+    public LoadSceneHelper lch;
 
     private bool _endGame = false;
 
@@ -15,6 +16,15 @@ public class EndGame : MonoBehaviour
     private void Awake()
     {
         EndgameObjects.ForEach(i => i.SetActive(false));
+    }
+
+    private void Update()
+    {
+        if (!_endGame) return;
+        if (Input.GetKeyDown(KeyCode.End))
+        {
+            lch.LoadLevel();
+        }
     }
 
 

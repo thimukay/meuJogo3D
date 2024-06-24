@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIGunUpdaters: []
+  sfxType: 5
   maxShoot: 2
   timeToRecharge: 2
   prefabProjectile: {fileID: -269413618042855620, guid: 97589eb588aef9746a3820488bcb055b, type: 3}

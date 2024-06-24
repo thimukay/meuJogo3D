@@ -7,6 +7,7 @@ public class GunBase : MonoBehaviour
 {
 
     public List<UIGunUpdater> uIGunUpdaters;
+    public SFXType sfxType;
     public float maxShoot = 5;
     public float timeToRecharge = 1f;
 
@@ -18,8 +19,11 @@ public class GunBase : MonoBehaviour
 
     private Coroutine _currentCoroutine;
 
-    
 
+    private void PlaySFX()
+    {
+        SFXPool.Instance.Play(sfxType);
+    }
     protected virtual IEnumerator ShootCoroutine()
     {
         while(true)
@@ -31,6 +35,7 @@ public class GunBase : MonoBehaviour
 
     public virtual void Shoot()
     {
+        PlaySFX();
         var projectile = Instantiate(prefabProjectile);
         projectile.transform.position = positionToShoot.position;
         projectile.transform.rotation = positionToShoot.rotation;

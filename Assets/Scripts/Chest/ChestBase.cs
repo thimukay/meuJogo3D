@@ -7,6 +7,7 @@ public class ChestBase : MonoBehaviour
 {
 
     public KeyCode keyCode = KeyCode.E;
+    public SFXType sfxType;
     public Animator animator;
     public string triggerOpen = "Open";
 
@@ -35,10 +36,15 @@ public class ChestBase : MonoBehaviour
     {
         if (_chestOpened) return;
 
+        PlaySFX();
         animator.SetTrigger(triggerOpen);
         _chestOpened = true;
         HideNotification();
         Invoke(nameof(ShowItem), .3f);
+    }
+    private void PlaySFX()
+    {
+        SFXPool.Instance.Play(sfxType);
     }
 
     private void ShowItem()

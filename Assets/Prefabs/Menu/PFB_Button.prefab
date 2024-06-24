@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5068468030353046609}
   - component: {fileID: 5831711331037927438}
   - component: {fileID: 4540272064032556454}
+  - component: {fileID: 3926319113421134085}
   m_Layer: 5
   m_Name: PFB_Button
   m_TagString: Untagged
@@ -121,6 +122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3926319113421134085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889067973323303227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01eaf5d88ef66d141a552bdcbbd21939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3112981539160905719
 GameObject:
   m_ObjectHideFlags: 0
